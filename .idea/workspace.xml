@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7384ab8-51cf-42c4-89e4-3722f84f0ce8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/djangoEcommerceApp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/templates/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoEcommerceApp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoEcommerceApp/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoEcommerceApp/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoEcommerceApp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoEcommerceApp/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +104,7 @@
       <workItem from="1729694294131" duration="4563000" />
       <workItem from="1729698960674" duration="5932000" />
       <workItem from="1729766779496" duration="28600000" />
-      <workItem from="1730365768163" duration="22320000" />
+      <workItem from="1730365768163" duration="37857000" />
     </task>
     <servers />
   </component>
