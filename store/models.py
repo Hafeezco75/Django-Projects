@@ -1,9 +1,5 @@
-import uuid
-
-from django.core.validators import MinValueValidator, MaxValueValidator
-from django.db import models
-
 from django.conf import settings
+from django.db import models
 
 
 # Create your models here
@@ -15,7 +11,6 @@ class Collection(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=255, null=False, blank=False)
-    #slug = models.SlugField(max_length=255)
     description = models.CharField(max_length=255, null=False, blank=False)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False)
     inventory = models.PositiveSmallIntegerField()
@@ -23,17 +18,23 @@ class Product(models.Model):
     collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
     promotion = models.ManyToManyField('Promotion', related_name='+')
     #review_set =
+    #slug = models.SlugField(max_length=255)
 
+    def __str__(self):
+        return f"{self.title} {self.price}"
+
+    class Meta:
+        ordering = ['title']
 
 class Cart(models.Model):
-    id = models.UUIDField(primary_key=True, max_length=36, default=uuid)
+    #id = models.UUIDField(primary_key=True, max_length=36, default=uuid4)
     created_at = models.DateTimeField(auto_now=True)
 
 
 class CartItem(models.Model):
-    cart = models.ForeignKey(Cart, on_delete=models.PROTECT, related_name='items')
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey(Product, on_delete=models.PROTECT)
-    quantity = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+    quantity = models.PositiveSmallIntegerField()
 
 
 class Order(models.Model):

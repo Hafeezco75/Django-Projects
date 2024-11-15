@@ -1,8 +1,8 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.generics import RetrieveUpdateAPIView, ListCreateAPIView
-from rest_framework.mixins import CreateModelMixin
+from rest_framework.generics import RetrieveUpdateAPIView, ListCreateAPIView, CreateAPIView
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.viewsets import ModelViewSet, GenericViewSet
+from rest_framework.viewsets import ModelViewSet
+
 from store.filters import ProductFilter
 from store.models import Product, Collection, Review, CartItem, Cart
 from store.serializers import ProductSerializer, CollectionSerializer, ReviewSerializer, CartItemSerializer, \
@@ -12,7 +12,6 @@ from store.serializers import ProductSerializer, CollectionSerializer, ReviewSer
 # Create your views here.
 
 #localhost:8000/store/products
-#localhost:8000/store/products/1
 
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
@@ -44,15 +43,22 @@ class ReviewViewSet(ModelViewSet):
     def get_queryset(self):
         return Review.objects.filter(product_id=self.kwargs['product_pk'])
 
-class CartViewSet(ListCreateAPIView, GenericViewSet, CreateModelMixin):
-    queryset = Cart.objects.all()
-    serializer_class = CartSerializer
-
-
 class CartItemViewSet(ModelViewSet):
     queryset = CartItem.objects.all()
     serializer_class = CartItemSerializer
-    filter_backends = [DjangoFilterBackend]
+
+class CartViewSet(ModelViewSet):
+    queryset = Cart.objects.prefetch_related('items').all()
+    serializer_class = CartSerializer
+
+
+
+
+
+#class CartItemViewSet(ModelViewSet):
+#    queryset = CartItem.objects.all()
+#    serializer_class = CartItemSerializer
+#    filter_backends = [DjangoFilterBackend]
 
 
 #class ProductListView(CreateListMixin)
